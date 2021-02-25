@@ -1,24 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-char board[8][8]
-        = {"rnbqkbnr",
-           "pppppppp",
-           "        ",
-           "        ",
-           "        ",
-           "        ",
-           "PPPPPPPP",
-           "RNBQKBNR"};
-
-void printBoard()
+void printBoard(char A[8][8])
 {
     int i, j;
     printf("\n");
     for (i = 0; i < 8; i++) {
         printf("%d ", 8 - i);
         for (j = 0; j < 8; j++) {
-            printf("%c ", board[i][j]);
+            printf("%c ", A[i][j]);
         }
         printf("\n");
     }
@@ -27,5 +17,14 @@ void printBoard()
 
 int main()
 {
- printBoard();
+	char board[8][8]
+        = {"rnbqkbnr",
+           "pppppppp",
+           "        ",
+           "        ",
+           "        ",
+           "        ",
+           "PPPPPPPP",
+           "RNBQKBNR"};
+	printBoard(board);
 }
