@@ -1,15 +1,15 @@
 CC = gcc
-CFLAGS = -Wall -Werror -MMD
+CFLAGS = -Wall -Wextra -Werror -MMD
 
 BIN_DIR = bin
 OBJ_DIR = obj
 SRC_DIR = src
 
-$(BIN_DIR)/Chess: chess.o tools.o
-	$(CC) $(CFLAGS) -o chess.o tools.o
-$(OBJ_DIR)/chess.o: chess.c
-	$(CC) $(CFLAGS) -o chess.c
-$(OBJ_DIR)/tools.o: tools.c
-	$(CC) $(CFLAGS) -o tools.c
+$(SRC_DIR)/chess/Chess: $(OBJ_DIR)/$(SRC_DIR)/chess/chess.o $(OBJ_DIR)/$(SRC_DIR)libtools/tools.o
+	$(CC) $(CFLAGS) -o $(SRC_DIR)/chess/Chess $(OBJ_DIR)/$(SRC_DIR)/chess/chess.o $(OBJ_DIR)/$(SRC_DIR)libtools/tools.o
+$(OBJ_DIR)/$(SRC_DIR)/chess/chess.o : $(SRC_DIR)/hello/chess.c
+	$(CC) $(CFLAGS) -o $(OBJ_DIR)/$(SRC_DIR)/chess/chess.o $(SRC_DIR)/hello/chess.c
+$(OBJ_DIR)/$(SRC_DIR)/libchess/tools.o: $(SRC_DIR)/libchess/tools.c
+	$(CC) $(CFLAGS) -o $(OBJ_DIR)/$(SRC_DIR)/libchess/tools.o $(SRC_DIR)/libchess/tools.c
 clean:
 	rm -rf *.o
