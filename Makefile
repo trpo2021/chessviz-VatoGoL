@@ -1,5 +1,5 @@
 APP_NAME = chess
-LIB_NAME = libtools
+LIB_NAME = libchess
 
 CFLAGS = -Wall -Wextra -Werror
 CPPFLAGS = -I src -MP -MMD
