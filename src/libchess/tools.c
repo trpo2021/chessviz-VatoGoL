@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "tools.h"
+#include <libchess/tools.h>
 void Print_table(char Table[9][9])
 {
 	int i,j;
