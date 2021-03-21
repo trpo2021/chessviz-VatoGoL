@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <src/libtools/tools.h>
-const int true = 1, false = 0;
+#include <src/libchess/tools.h>
 
 int main ()
 {
-	int p;
+	int true = 1, false = 0;
+	usigned int p, Err_pos = 0;
 	char Table_chess [9][9] = {};
 	//ðàçìåòêà ïîëÿ
 	Table_chess[0][1] = 'a', Table_chess[0][2] = 'b', Table_chess[0][3] = 'c', Table_chess[0][4] = 'd',
@@ -39,9 +39,8 @@ int main ()
 	}while (1);
 	//çàïèñü, ïðîâåðêà è ðåàëèçàöèÿ õîäîâ
 	char move [20], Err_moves[20] = {},key; //ìîæåò çàïîìíèòü 20 íîìåðîâ ñòðîê ñ îøèáêàìè
-	int Err_pos = 0,Fact_move[4] = {}, Fact_pos = 0;
-	int Read_char = true, Read_number = false, Err_flag = false, Fact_flag = true, Mat_flag = false,
-	White_move = false, Black_move = false;
+	int Fact_move[4] = {}, Fact_pos = 0;
+	int Read_char = true, Read_number = false, Err_flag = false;
 	
 	do
 	{
@@ -94,13 +93,6 @@ int main ()
 				Table_chess[Fact_move[1]] [Fact_move[0]] = ' ';
 				Table_chess[Fact_move[3]] [Fact_move[2]] = key;
 				Fact_pos = 0;
-				Fact_flag = true;
-				White_move = true;
-			}
-			if (key == '#')
-			{
-				Mat_flag = true;
-				break;	
 			}
 		}
 		if(Err_flag == false)
@@ -119,6 +111,6 @@ int main ()
 		}
 	}
 	Print_table(Table_chess);
-
+	return 1;
 }
 
