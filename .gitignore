@@ -1,4 +1,4 @@
-bin/chessviz
+bin\
 *.a
 *.o
 *.d
