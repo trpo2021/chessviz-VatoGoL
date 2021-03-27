@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <src/libchess/tools.h>
+#include <libchess/tools.h>
 
 int main ()
 {
 	int true = 1, false = 0;
-	usigned int p, Err_pos = 0;
+	unsigned int p, Err_pos = 0;
 	char Table_chess [9][9] = {};
 	//ðàçìåòêà ïîëÿ
 	Table_chess[0][1] = 'a', Table_chess[0][2] = 'b', Table_chess[0][3] = 'c', Table_chess[0][4] = 'd',
@@ -33,7 +33,7 @@ int main ()
 	do
 	{
 		printf("\nEnter correct path or file name: ");
-		scanf("%s",&Name_file);
+		scanf("%s",Name_file);
 		if((file = fopen(Name_file,"r")) != NULL) break;
 		printf("\nERROR!"); //åñëè ïóòü èëè íàçâàíèå ôàéëà íå êîððåêòíû
 	}while (1);
