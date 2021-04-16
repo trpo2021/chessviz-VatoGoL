@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "tools.h"
+#include <libchess/tools.h>
 #include <math.h>
 
 void Print_table(char Table[9][9])
@@ -55,8 +55,10 @@ FILE *Checking_Resources(FILE *file, char Name_file [30])
 
 void Checking_moves(FILE *file, unsigned int p, char Table_chess [9][9])
 {
-    char move [20], Err_moves[20] = {},key; //ìîæåò çàïîìíèòü 20 íîìåðîâ ñòðîê ñ îøèáêàìè
+	int true = 1, false = 0;
+    	char move [20], Err_moves[20] = {},key; //ìîæåò çàïîìíèòü 20 íîìåðîâ ñòðîê ñ îøèáêàìè
 	int Fact_move[4] = {}, Fact_pos = 0;
+	unsigned Err_pos = 0;
 	int Read_char = true, Read_number = false, Err_flag = false;
 
 	do
@@ -78,6 +80,7 @@ void Checking_moves(FILE *file, unsigned int p, char Table_chess [9][9])
 					case 'f': Fact_move[Fact_pos] = 6; break;
 					case 'g': Fact_move[Fact_pos] = 7; break;
 					case 'h': Fact_move[Fact_pos] = 8; break;
+					default: Err_flag = true; break;
 				}
 				Fact_pos++;
 				//printf("\n%d", Fact_pos);
@@ -97,6 +100,7 @@ void Checking_moves(FILE *file, unsigned int p, char Table_chess [9][9])
 					case '6': Fact_move[Fact_pos] = 6; break;
 					case '7': Fact_move[Fact_pos] = 7; break;
 					case '8': Fact_move[Fact_pos] = 8; break;
+					default: Err_flag = true; break;
 				}
 				Fact_pos++;
 				//printf("\n%d", Fact_pos);
@@ -117,8 +121,14 @@ void Checking_moves(FILE *file, unsigned int p, char Table_chess [9][9])
 			printf ("\n%s\n\n", move);
 			Print_table(Table_chess);
 		}
+		else
+		{
+			Err_moves[Err_pos] = move[0];
+			Err_pos++;
+			Err_flag = false;
+		}
 	}while(!feof(file));
-	if (Err_flag == true)
+	if (Err_pos > 0)
 	{
 		printf("Wrong moves in these lines: ");
 		for (p = 0; p < Err_pos; p++)
