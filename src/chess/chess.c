@@ -6,12 +6,12 @@
 int main ()
 {
 
-	unsigned int p, Err_pos = 0;
+	unsigned int p = 0;
 	char Table_chess [9][9] = {};
 	//
 	Preparation(Table_chess,p); // Размещаем фигуры на доске
 	//
-	FILE *file;
+	FILE *file = 0;
 	char Name_file[30];
 
 	file = Checking_Resources(file,Name_file);
