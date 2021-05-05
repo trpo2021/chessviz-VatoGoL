@@ -20,5 +20,5 @@ int main ()
 	Checking_moves(file,p,Table_chess);
 
 	Print_table(Table_chess);
-	return 1;
+	return 0;
 }
