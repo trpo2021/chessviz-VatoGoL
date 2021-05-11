@@ -38,10 +38,11 @@ void Preparation(char Table_chess[9][9], unsigned int p) {
   }
 }
 
-FILE *Checking_Resources(FILE *file, char Name_file[30]) {
+FILE *Checking_Resources(FILE *file,
+                         char Name_file[30] = {"Game_of_chess.txt"}) {
   do {
     printf("\nEnter correct path or file name: ");
-    scanf("%s", Name_file);
+    // scanf("%s", Name_file);
     if ((file = fopen(Name_file, "r")) != NULL)
       break;
     printf("\nERROR!"); //åñëè ïóòü èëè íàçâàíèå ôàéëà íå êîððåêòíû
