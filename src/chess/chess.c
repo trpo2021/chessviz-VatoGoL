@@ -1,13 +1,13 @@
+#include <libchess/tools.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <libchess/tools.h>
 
 int main() {
   unsigned int p = 0;
   char Table_chess[9][9] = {};
   //
-  Preparation(Table_chess, p);  // Размещаем фигуры на доске
+  Preparation(Table_chess, p); // Размещаем фигуры на доске
   //
   FILE *file = 0;
   char Name_file[30];

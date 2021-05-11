@@ -1,9 +1,9 @@
+#include <ctest.h>
+#include <libchess/tools.h>
 #include <math.h>
 #include <stdio.h>
-#include <libchess/tools.h>
 #include <stdlib.h>
 #include <string.h>
-#include <ctest.h>
 
 CTEST(suite2, PUSTOI) {}
 CTEST(suite2, CHEK_MOVE) {
@@ -11,7 +11,7 @@ CTEST(suite2, CHEK_MOVE) {
   int i, j;
   char Tablefact_chess[9][9];
   char Table_chess[9][9];
-  FILE* file;
+  FILE *file;
   file = fopen("test.txt", "r");
   for (i = 0; i < 9; i++) {
     for (j = 0; j < 9; j++) {

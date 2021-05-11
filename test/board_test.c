@@ -1,6 +1,6 @@
-#include <stdio.h>
-#include <libchess/tools.h>
 #include <ctest.h>
+#include <libchess/tools.h>
+#include <stdio.h>
 
 CTEST(suite1, PUSTOI) {}
 
@@ -42,6 +42,7 @@ CTEST(suite1, OTRISOVKA_DOSKI) {
   }
 
   for (i = 0; i < 9; i++) {
-    for (j = 0; j < 9; j++) ASSERT_EQUAL(Table_chess[i][j], Fact_chess[i][j]);
+    for (j = 0; j < 9; j++)
+      ASSERT_EQUAL(Table_chess[i][j], Fact_chess[i][j]);
   }
 }
