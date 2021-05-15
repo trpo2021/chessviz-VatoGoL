@@ -12,7 +12,7 @@ CTEST(suite2, CHEK_MOVE) {
   char Tablefact_chess[9][9];
   char Table_chess[9][9];
   FILE *file;
-  file = fopen("text/test.txt", "r");
+  file = fopen("test/test.txt", "r");
   for (i = 0; i < 9; i++) {
     for (j = 0; j < 9; j++) {
       Tablefact_chess[i][j] = ' ';
